@@ -1,0 +1,14 @@
+
+<html>
+   <head>
+      <title>Security Test</title>
+   </head>
+   <body>
+      <div class="main_page">
+         <button type="button" onclick="testget({'command':'get_sensors'})">Test GET</button>
+         <button type="button" onclick="testpost({'command':'add_sensor','location':1,'event_type':1})">Test add</button>
+         <button type="button" onclick="testpost({'command':'remove_sensor','db_id':'6065480007bed37e64276401','event_type':1})">Test rem</button>
+      </div>
+      <script src="index.js" type="text/javascript"></script>
+   </body>
+</html>

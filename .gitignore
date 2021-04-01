@@ -1,0 +1,24 @@
+# This is the ignore file for the Media Server Git Repository
+# Ignoring object files from C programs
+
+*
+!*.*
+!*/
+!*makefile*
+
+*.o
+*.geany
+*.gch
+*.cnfg
+*.conf
+!./interface/default.cnfg
+*.kmf
+*.code-workspace
+*.vscode/
+
+*.pyc
+
+/.metadata/*
+/outgoing/*
+/machine/.settings/*
+/machine/*.html
