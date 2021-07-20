@@ -8,8 +8,10 @@
 # Main will kill all threads and restart all alarms and sensors whenenever a sensor/alarm is added or removed
 
 import security_threads
+import global_data
 import database
 import queue
+import gpio
 
 class alarm_class:
    def __init__(self, name="alarm", location = 0, event_type = 0, db_id = 0):

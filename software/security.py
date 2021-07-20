@@ -66,6 +66,16 @@ def process_main_instruction(instruction):
          while(main_thread.is_active()):
             pass
 
+   if(instruction.group == "sensor_tasks"):
+      if(instruction.task == "sensor_triggered"):
+         print("sensor triggered")
+
+   if(instruction.group == "alarm_tasks"):
+      if(instruction.task == "alarm_on"):
+         print("alarm on")
+      if(instruction.task == "alarm_of"):
+         print("alarm off")
+
    if(instruction.group == "network_task"):
       if(instruction.task == "get"):
          return_data = process_get(instruction)
