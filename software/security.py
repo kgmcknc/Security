@@ -76,7 +76,7 @@ def process_main_instruction(instruction):
       if(instruction.task == "alarm_of"):
          print("alarm off")
 
-   if(instruction.group == "network_task"):
+   if(instruction.group == "local_tasks"):
       if(instruction.task == "get"):
          return_data = process_get(instruction)
          instruction.data = return_data

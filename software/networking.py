@@ -11,6 +11,9 @@ local_socket_list = []
 
 class my_socket_class:
    socket = 0
+   ip_addr = 0
+   port = 0
+   device_id = 0
    active = 0
    is_get = 0
    ready = 0
@@ -92,7 +95,7 @@ def network_listener(network_thread):
             dev.ready = 0
             data = dev.socket.recv(1024)
             instruction = global_data.instruction_class()
-            instruction.group = "network_task"
+            instruction.group = "local_tasks"
             instruction.task = ""
             instruction.data = data.decode()
             if(instruction.data[0:3] == "GET"):
@@ -124,17 +127,14 @@ def network_listener(network_thread):
                   dev.socket.close()
                else:
                   pass
-                  # dev.active = 0
-                  # dev.done = 1
-                  # dev.is_get = 0
-
+    
+      new_list = []
       for dev in local_socket_list:
          if(dev.done):
             dev.done = 0
-            local_socket_list.remove(dev)
-         # if(dev.is_get and dev.done):
-         #    dev.done = 0
-         #    local_socket_list.remove(dev)
+         else:
+            new_list.append(dev)
+      local_socket_list = new_list
       
       rx_list = [serversocket]
       for local_device in local_socket_list:
